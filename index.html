@@ -26,9 +26,7 @@
     "addressCountry": "PL"
   },
   "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Wednesday"], "opens": "09:00", "closes": "20:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Thursday"], "opens": "12:00", "closes": "20:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00"}
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:30", "closes": "20:00"}
   ],
   "sameAs": [
     "https://facebook.com/EwelinaCyzman.ZADBANA",
@@ -388,7 +386,7 @@ p{margin:0 0 1em}
 .score span{font-size:.95rem;color:var(--plum-2);line-height:1.35}
 .score span u{text-underline-offset:3px}
 .score .stars svg{width:18px;height:18px}
-@media (min-width:760px){.rev-top{grid-template-columns:1fr 1fr}}
+@media (min-width:760px){.rev-top{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .quotes{display:grid;gap:12px;margin-top:clamp(24px,4vw,40px)}
 .quotes figure{margin:0;padding:1.6rem 1.5rem 1.4rem;background:var(--paper);border-radius:var(--r-md);display:flex;flex-direction:column;gap:.9rem}
 .quotes blockquote{margin:0;font-family:var(--display);font-size:clamp(1.45rem,3.4vw,2rem);line-height:1.2}
@@ -396,6 +394,9 @@ p{margin:0 0 1em}
 .quotes figcaption b{color:var(--plum);font-weight:600;font-size:1rem}
 @media (min-width:800px){.quotes{grid-template-columns:1fr 1fr}}
 .rev-more{margin-top:1.6rem;color:var(--plum-2);max-width:40rem}
+.quotes:not(.all) figure:nth-child(n+7){display:none}
+.quotes.all+.q-more{display:none}
+.q-more{margin-top:1.2rem}
 
 /* ---------- O MNIE ---------- */
 .about-grid{display:grid;gap:2rem}
@@ -538,10 +539,10 @@ body{padding-bottom:74px}
     </div>
 
     <div class="stats" role="list">
-      <div class="stat" role="listitem"><b>5,0</b><span>ocena naszego salonu w Booksy</span></div>
+      <div class="stat" role="listitem"><b>5,0</b><span>ocena w Google, 50 opinii</span></div>
       <div class="stat" role="listitem"><b>278</b><span>opinii klientek w Booksy</span></div>
       <div class="stat" role="listitem"><b>od 2018</b><span>stylizuję rzęsy</span></div>
-      <div class="stat" role="listitem"><b id="todayH">9:00–20:00</b><span id="todayL">godziny w poniedziałek</span></div>
+      <div class="stat" role="listitem"><b id="todayH">9:30–20:00</b><span id="todayL">godziny w poniedziałek</span></div>
     </div>
 
     <div class="s-block">
@@ -571,13 +572,13 @@ body{padding-bottom:74px}
       <div class="mini-rev">
         <figure>
           <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
-          <blockquote>Profesjonalnie wykonana usługa, polecam.</blockquote>
-          <figcaption>Katarzyna, uzupełnienie rzęs UV</figcaption>
+          <blockquote>Bardzo polecam rzęsy u Eweliny. Zawsze pięknie i co najważniejsze trwale zrobione.</blockquote>
+          <figcaption>Aleksandra K., rzęsy, Google</figcaption>
         </figure>
         <figure>
           <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
-          <blockquote>Bardzo profesjonalnie i miło, jak zawsze.</blockquote>
-          <figcaption>Beata</figcaption>
+          <blockquote>Makijaż permanentny brwi super wykonany. Profesjonalne podejście i bardzo miła atmosfera.</blockquote>
+          <figcaption>Kinga Z., makijaż permanentny brwi, Google</figcaption>
         </figure>
       </div>
       <div class="s-foot"><a class="more" href="#opinie">Wszystkie opinie<svg><use href="#i-arr"/></svg></a></div>
@@ -1024,11 +1025,18 @@ body{padding-bottom:74px}
 <!-- ================= OPINIE ================= -->
 <section class="panel" data-tab="opinie" data-title="Opinie klientek" aria-labelledby="op-h">
   <div class="wrap p-head">
-    <span class="eyebrow">Booksy i Facebook</span>
+    <span class="eyebrow">Google, Booksy i Facebook</span>
     <h2 class="p-h" id="op-h">Opinie</h2>
   </div>
   <div class="wrap p-body">
     <div class="rev-top">
+      <a class="score" href="https://maps.google.com/?cid=12484691485933545079" target="_blank" rel="noopener">
+        <b>5,0</b>
+        <div>
+          <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+          <span><u>50 opinii w Google</u> o Zadbanej</span>
+        </div>
+      </a>
       <a class="score" href="https://booksy.com/pl-pl/173584_a-szabluk-e-cyzman_salon-kosmetyczny_4353_piaseczno" target="_blank" rel="noopener">
         <b>5,0</b>
         <div>
@@ -1047,6 +1055,46 @@ body{padding-bottom:74px}
     <div class="quotes">
       <figure>
         <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Bardzo polecam rzęsy u Eweliny. Zawsze pięknie i co najważniejsze trwale zrobione, świetnie się trzymają.</blockquote>
+        <figcaption><b>Aleksandra K.</b>Rzęsy, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Makijaż permanentny brwi super wykonany. Profesjonalne podejście i bardzo miła atmosfera.</blockquote>
+        <figcaption><b>Kinga Z.</b>Makijaż permanentny brwi, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Korzystam z usług przedłużania i zagęszczania rzęs od 3 lat, jestem zachwycona profesjonalnym podejściem do klienta.</blockquote>
+        <figcaption><b>Mariola O.</b>Przedłużanie rzęs, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Za każdym razem wychodzę w pełni zrelaksowana, a moja cera jest wyraźnie odświeżona i promienna.</blockquote>
+        <figcaption><b>Anna K.</b>Zabiegi na twarz, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Świetna atmosfera, indywidualne podejście do klientki. Bardzo dobrze dobiera zabiegi do rodzaju skóry.</blockquote>
+        <figcaption><b>Teresa W.</b>Zabiegi i rzęsy, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Brwi u p. Eweliny wykonane perfekcyjnie. Jestem bardzo zadowolona z efektu.</blockquote>
+        <figcaption><b>Wiola S.</b>Brwi, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Idealnie dobiera rodzaj, dzięki czemu rzęsy wyglądają naturalnie. Super trwałość.</blockquote>
+        <figcaption><b>Adela</b>Rzęsy, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
+        <blockquote>Podoba mi się zarówno kolor, jak i kształt brwi. Serdecznie polecam.</blockquote>
+        <figcaption><b>Katarzyna C.</b>Makijaż permanentny brwi, Google</figcaption>
+      </figure>
+      <figure>
+        <span class="stars" role="img" aria-label="5 na 5 gwiazdek"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span>
         <blockquote>Profesjonalnie wykonana usługa, polecam.</blockquote>
         <figcaption><b>Katarzyna</b>Uzupełnienie rzęs UV, Booksy</figcaption>
       </figure>
@@ -1056,7 +1104,8 @@ body{padding-bottom:74px}
         <figcaption><b>Beata</b>Booksy</figcaption>
       </figure>
     </div>
-    <p class="rev-more">Wszystkie opinie przeczytasz w <a href="https://booksy.com/pl-pl/173584_a-szabluk-e-cyzman_salon-kosmetyczny_4353_piaseczno" target="_blank" rel="noopener" style="color:var(--fuchsia-deep);font-weight:600">Booksy</a> i na <a href="https://facebook.com/EwelinaCyzman.ZADBANA" target="_blank" rel="noopener" style="color:var(--fuchsia-deep);font-weight:600">Facebooku</a>. Byłaś u mnie? Będzie mi miło, jeśli zostawisz opinię.</p>
+    <button type="button" class="btn btn-line q-more" onclick="this.previousElementSibling.classList.add('all')">Pokaż więcej opinii</button>
+    <p class="rev-more">Wszystkie opinie przeczytasz w <a href="https://maps.google.com/?cid=12484691485933545079" target="_blank" rel="noopener" style="color:var(--fuchsia-deep);font-weight:600">Google</a>, <a href="https://booksy.com/pl-pl/173584_a-szabluk-e-cyzman_salon-kosmetyczny_4353_piaseczno" target="_blank" rel="noopener" style="color:var(--fuchsia-deep);font-weight:600">Booksy</a> i na <a href="https://facebook.com/EwelinaCyzman.ZADBANA" target="_blank" rel="noopener" style="color:var(--fuchsia-deep);font-weight:600">Facebooku</a>. Byłaś u mnie? Będzie mi miło, jeśli zostawisz opinię.</p>
   </div>
 </section>
 
@@ -1107,11 +1156,11 @@ body{padding-bottom:74px}
         <h3 class="plist-h" style="margin-top:0">Godziny otwarcia</h3>
         <table class="hours">
           <tbody>
-            <tr data-d="1"><td>Poniedziałek</td><td>9:00–20:00</td></tr>
-            <tr data-d="2"><td>Wtorek</td><td>12:00–20:00</td></tr>
-            <tr data-d="3"><td>Środa</td><td>9:00–20:00</td></tr>
-            <tr data-d="4"><td>Czwartek</td><td>12:00–20:00</td></tr>
-            <tr data-d="5"><td>Piątek</td><td>9:00–17:00</td></tr>
+            <tr data-d="1"><td>Poniedziałek</td><td>9:30–20:00</td></tr>
+            <tr data-d="2"><td>Wtorek</td><td>9:30–20:00</td></tr>
+            <tr data-d="3"><td>Środa</td><td>9:30–20:00</td></tr>
+            <tr data-d="4"><td>Czwartek</td><td>9:30–20:00</td></tr>
+            <tr data-d="5"><td>Piątek</td><td>9:30–20:00</td></tr>
           </tbody>
         </table>
         <div class="row-btns" style="margin-top:1.6rem">
@@ -1142,9 +1191,7 @@ body{padding-bottom:74px}
         <p><a href="https://facebook.com/EwelinaCyzman.ZADBANA" target="_blank" rel="noopener">Facebook</a></p>
       </div>
       <div>
-        <p>Pon. i śr. 9:00–20:00</p>
-        <p>Wt. i czw. 12:00–20:00</p>
-        <p>Pt. 9:00–17:00</p>
+        <p>Pon.–pt. 9:30–20:00</p>
       </div>
     </div>
     <p class="copy">© 2026 Usługi Kosmetyczne Zadbana, Ewelina Cyzman</p>
@@ -1330,7 +1377,7 @@ body{padding-bottom:74px}
   })();
 
   /* ---------- hours: today ---------- */
-  var HRS={1:"9:00–20:00",2:"12:00–20:00",3:"9:00–20:00",4:"12:00–20:00",5:"9:00–17:00"};
+  var HRS={1:"9:30–20:00",2:"9:30–20:00",3:"9:30–20:00",4:"9:30–20:00",5:"9:30–20:00"};
   var DAYS=["niedzielę","poniedziałek","wtorek","środę","czwartek","piątek","sobotę"];
   var day=new Date().getDay(),row=document.querySelector('.hours tr[data-d="'+day+'"]');
   if(row)row.classList.add("today");
